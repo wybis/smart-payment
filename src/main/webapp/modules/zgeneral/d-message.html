@@ -1,0 +1,7 @@
+<div ng-show="vm.params.errorMessage">
+    <h2 class="md-display-1 md-warn">{{vm.params.errorMessage}}</h2>
+</div>
+<div ng-show="!vm.params.errorMessage">
+    <h2 class="md-display-1 md-accent">{{vm.params.successMessage}}</h2>
+    <h3 class="md-headline md-accent">{{vm.params.description}}</h3>
+</div>

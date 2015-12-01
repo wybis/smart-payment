@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Smart Payment</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
+
+    <link rel="stylesheet" href="modules/default.css">
+</head>
+
+<body>
+
+<div class="container">
+    <br>
+
+    <div class="text-center">
+        <h1>Smart Payment</h1>
+    </div>
+</div>
+
+<hr class="hr-xtra-small"/>
+
+<div id="page-body">
+    <br/><br/><br/><br/>
+
+    <div class="container">
+        <div clas="row">
+            <div class="eight columns offset-by-two">
+                <div class="text-center">
+                    <h4>Transaction Id : 0</h4>
+                </div>
+                <br/>
+
+                <div class="text-center">
+                    <h5>Payment successful! Please wait while redirecting to merchant site.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<form method="post" action="/paymentCallBack">
+    <input type="hidden" name="pytTranId" value="222">
+    <input type="hidden" name="appTranId" value="111">
+</form>
+-->
+<hr class="hr-xtra-small"/>
+
+<div class="container">
+    <div class="text-center">
+        <p>Payment Gateway Simulator made with <a href="http://www.getskeleton.com" target="_blank">Skeleton CSS</a></p>
+    </div>
+</div>
+
+<script type="application/javascript">
+
+    function processCallBack() {
+        console.log('processing callback started...');
+
+        var form = document.createElement('form');
+
+        form.setAttribute('method', 'post');
+        form.setAttribute('action', '/paymentCallBack');
+
+        var hiddenField = document.createElement('input');
+        hiddenField.setAttribute('type', 'hidden');
+        hiddenField.setAttribute('name', 'pytTranId');
+        hiddenField.setAttribute('value', '2222');
+        form.appendChild(hiddenField);
+
+        hiddenField = document.createElement('input');
+        hiddenField.setAttribute('type', 'hidden');
+        hiddenField.setAttribute('name', 'appTranId');
+        hiddenField.setAttribute('value', '1111');
+        form.appendChild(hiddenField);
+
+        document.body.appendChild(form);
+
+        console.log('processing callback finished...');
+
+        form.submit();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('processing callback is going to start...');
+        window.setTimeout(processCallBack, 5000);
+    });
+
+</script>
+
+</body>
+</html>

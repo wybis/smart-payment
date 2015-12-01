@@ -1,0 +1,25 @@
+{
+  "name": "smartpayment",
+  "description": "Smart Pament",
+  "version": "0.0.0",
+  "homepage": "http://smartpayment.appspot.com",
+  "license": "MIT",
+  "private": true,
+  "install": {
+    "base": "src/main/webapp/bowercomponents"
+  },
+  "dependencies": {
+    "skeleton": "skeleton-css#~2.0.4",
+    "moment": "~2.10.3",
+    "lodash": "~3.9.3",
+    "angular": "~1.4.x",
+    "angular-sanitize": "~1.4.x",
+    "angular-route": "~1.4.x",
+    "ngstorage": "~0.3.4",
+    "jquery.inputmask": "~3.1.63",
+    "angular-inputmask": "*"
+  },
+  "resolutions": {
+    "angular": "~1.4.x"
+  }
+}
