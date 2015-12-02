@@ -35,6 +35,22 @@ hr.hr-medium {
     text-align: right;
 }
 
+.text-info {
+    color: blue;
+}
+
+.text-success {
+    color: green;
+}
+
+.text-warning {
+    color: orange;
+}
+
+.text-danger {
+    color: red;
+}
+
 .jumptron {
     margin-top: 6rem;
     text-align: center;

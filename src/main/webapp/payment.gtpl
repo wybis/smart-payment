@@ -31,32 +31,29 @@
 
     <% if (request.messageSuccess == null) { %>
 
-    <form <% if (request.message) {
-        println('class="hide"')
-    } %> method="post" action="/paymentProcess">
-
+    <form <% if (request.messageSuccess) { println('class="hide"') } %> id="form0" method="post"
+        action="/paymentProcess" enctype="application/x-www-form-urlencoded">
+    <fieldset>
         <div class="container">
             <div clas="row">
                 <div class="six columns offset-by-three">
                     <% if (request.messageError) { %>
                     <div class="text-center">
-                        <strong><% println(request.message) %></strong>
+                        <strong class="text-danger"><% println(request.messageError) %></strong>
                     </div>
                     <% } %>
                     <div>
                         <label>Merchant Name</label>
-                        <input class="u-full-width" type="text" name="merchantName" value="<%=request.merchantName%>"
-                               disabled/>
+                        <input class="u-full-width" type="text" name="merchantName" value="<%=request.merchantName%>" readonly>
                     </div>
 
                     <div>
                         <label>Amount</label>
-                        <input class="u-full-width" type="text" name="tranAmount" value="<%=request.tranAmount%>"
-                               disabled/>
+                        <input class="u-full-width" type="text" name="tranAmount" value="<%=request.tranAmount%>" readonly>
                     </div>
 
                     <div class="text-center">
-                        <input class="button-primary" type="submit" value="Submit">
+                        <input class="button-primary" type="submit" name="makePayment" value="Make Payment">
                     </div>
                 </div>
             </div>
@@ -64,6 +61,8 @@
 
         <input type="hidden" name="merchantId" value="<%=request.merchantId%>">
         <input type="hidden" name="appTranId" value="<%=request.appTranId%>">
+        <input type="hidden" name="callBackUrl" value="<%=request.callBackUrl%>">
+    </fieldset>
     </form>
 
     <% } else { %>
@@ -105,7 +104,7 @@
         var form = document.createElement('form');
 
         form.setAttribute('method', 'post');
-        form.setAttribute('action', '/paymentCallBack');
+        form.setAttribute('action', '<%print(request.callBackUrl)%>');
 
         var hiddenField = document.createElement('input');
         hiddenField.setAttribute('type', 'hidden');

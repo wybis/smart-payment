@@ -25,6 +25,12 @@ appControllers.controller('rootController', rootController);
 var dependents = ['ngRoute', 'ngSanitize'];
 dependents.push('ngStorage');
 dependents.push('green.inputmask4angular');
+dependents.push('ngNotify');
+dependents.push('hSweetAlert');
+dependents.push('selectize');
+//dependents.push('blockUI');
+//dependents.push('presence');
+//dependents.push('angular.panels');
 dependents.push('app.filters');
 dependents.push('app.directives');
 dependents.push('app.services');
@@ -43,6 +49,16 @@ function appConfig($routeProvider, $locationProvider) {
     $routeProvider.when('/home', {
         templateUrl: 'modules/home/d-index.html',
         controller: 'indexController as vm'
+    });
+
+    $routeProvider.when('/testPayment', {
+        templateUrl: 'modules/testPayment/d-default.html',
+        controller: 'testPaymentController as vm'
+    });
+
+    $routeProvider.when('/testBed', {
+        templateUrl: 'modules/testBed/d-default.html',
+        controller: 'testBedController as vm'
     });
 
     $routeProvider.when('/message', {

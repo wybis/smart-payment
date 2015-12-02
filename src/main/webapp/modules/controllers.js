@@ -11,7 +11,7 @@ function messageController($log, $rootScope, $scope, $location) {
     else {
         vm.hasErrorMessage = false;
     }
-    $log.debug(vm.params);
+    //$log.debug(vm.params);
 }
 appControllers.controller('messageController', messageController);
 

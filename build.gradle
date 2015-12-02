@@ -119,7 +119,10 @@ task bowerComponents(type: Sync) {
     include '**/*.map'
     include 'skeleton/css/normalize.css'
     include 'skeleton/css/skeleton.css'
+    include 'sweetalert/dist/sweetalert.css'
+    include 'selectize/dist/css/selectize.default.css'
     include 'angular-inputmask/src/green.inputmask4angular.js'
+    include 'angular-selectize2/dist/angular-selectize.js'
 
     into 'src/main/webapp/bower_components'
 

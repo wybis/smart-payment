@@ -9,6 +9,7 @@
     "base": "src/main/webapp/bowercomponents"
   },
   "dependencies": {
+    "font-awesome": "~4.3.0",
     "skeleton": "skeleton-css#~2.0.4",
     "moment": "~2.10.3",
     "lodash": "~3.9.3",
@@ -16,6 +17,13 @@
     "angular-sanitize": "~1.4.x",
     "angular-route": "~1.4.x",
     "ngstorage": "~0.3.4",
+    "sweetalert": "~1.0.1",
+    "angular-h-sweetalert": "~1.4.5",
+    "ng-notify": "~0.6.2",
+    "angular-selectize2": "~3.0.1",
+    "angular-block-ui": "~0.2.0",
+    "angular.panels": "*",
+    "angular-presence": "~0.2.0",
     "jquery.inputmask": "~3.1.63",
     "angular-inputmask": "*"
   },

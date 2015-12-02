@@ -1,22 +1,21 @@
+import io.wybis.smartpayment.util.Helper
 
-//String merchantId = params.merchantId
-//String merchantName = params.merchantName
-//String tranAmount = params.tranAmount
-//String appTranId = params.appTranId
-//console.println "$merchantId $merchantName $tranAmount $appTranId"
+//Helper.printRequestDetails(request)
 
-if(params.merchantId == null || params.merchantName == null || params.tranAmount == null || params.appTranId == null ) {
-    request.message = 'Missing parameters... Invalid payment request!'
+if(params.merchantId == null || params.merchantName == null || params.tranAmount == null || params.appTranId == null || params.callBackUrl == null ) {
+    String message = 'Missing parameters... Invalid payment request!'
+    println message
+    return
 }
-else {
 
-    request.merchantId = params.merchantId
+request.merchantId = params.merchantId
 
-    request.merchantName = params.merchantName
+request.merchantName = params.merchantName
 
-    request.tranAmount = params.tranAmount
+request.tranAmount = params.tranAmount
 
-    request.appTranId = params.appTranId
-}
+request.appTranId = params.appTranId
+
+request.callBackUrl = params.callBackUrl
 
 forward '/payment.gtpl'

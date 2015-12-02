@@ -1,23 +1,21 @@
 import io.wybis.smartpayment.dto.SessionDto
-import io.wybis.smartpayment.service.SessionService
+import io.wybis.smartpayment.util.Helper
 
-//String merchantId = params.merchantId
-//String tranAmount = params.tranAmount
-//String appTranId = params.appTranId
-//console.println "$merchantId $merchantName $tranAmount $appTranId"
+//Helper.printRequestDetails(request)
 
-if(params.merchantId == null || params.tranAmount == null || params.appTranId == null ) {
+request.merchantId = params.merchantId
+request.merchantName = params.merchantName
+request.tranAmount = params.tranAmount
+request.appTranId = params.appTranId
+request.callBackUrl = params.callBackUrl
+
+if(params.merchantId == null || params.tranAmount == null || params.appTranId == null || params.callBackUrl == null ) {
     request.messageError = 'Missing parameters... Invalid payment request!'
 }
 else {
 
-    SessionDto sessionUserDto = session[SessionService.SESSION_USER_KEY]
-
-    request.merchantId = params.merchantId
-
-    request.tranAmount = params.tranAmount
-
-    request.appTranId = params.appTranId
+    //SessionDto sessionUserDto = session[SessionService.SESSION_USER_KEY]
+    SessionDto sessionUserDto = new SessionDto(id = 1)
 
     long pytTranId = autoNumberService.getNextNumber(sessionUserDto, 'paymentTranId')
 
@@ -25,5 +23,7 @@ else {
 
     request.messageSuccess = 'Payment successful! Please wait while redirecting to merchant site.'
 }
+console.println request.messageError
+console.println request.messageSuccess
 
 forward '/payment.gtpl'
