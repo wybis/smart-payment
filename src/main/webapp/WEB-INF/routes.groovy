@@ -17,3 +17,5 @@ all 	'/_ah/warmup',		forward  : '/ping.groovy'
 get	    '/paymentRequest',                              forward : '/paymentRequest.groovy'
 post    '/paymentProcess',                              forward : '/paymentProcess.groovy'
 post    '/paymentCallBack',                             forward : '/paymentCallBack.groovy'
+
+get  	'/sessions/properties',	                        forward : '/io/vteial/smartpayment/web/session/properties.groovy'

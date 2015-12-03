@@ -1,4 +1,4 @@
-function testPaymentController($log, $rootScope, $scope, wydNotifyService, sweet, $window) {
+function testPaymentController($log, $rootScope, $scope, wydNotifyService, sweet, $window, $location) {
     $log.debug('testPaymentController...');
     $rootScope.viewName = 'Test Payment';
 
@@ -36,6 +36,13 @@ function testPaymentController($log, $rootScope, $scope, wydNotifyService, sweet
             $window.location = url;
         });
     };
+
+    var urlPrefix = $location.protocol() + '://' + $location.host();
+    if($location.port() > 0 && $location.port() != 80) {
+        urlPrefix += ':' + $location.port();
+    }
+    defaultPr.callBackUrl = urlPrefix + '/paymentCallBack';
+    $log.info('Payment CallBackUrl : ' + defaultPr.callBackUrl);
 
     vm.reset();
 }

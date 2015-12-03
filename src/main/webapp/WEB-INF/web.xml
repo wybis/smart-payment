@@ -7,11 +7,11 @@
 	<listener>
 		<listener-class>groovyx.gaelyk.GaelykServletContextListener</listener-class>
 	</listener>
-
+	<!--
 	<listener>
 		<listener-class>io.wybis.smartpayment.web.listeners.DefaultSessionListener</listener-class>
 	</listener>
-
+	-->
 	<servlet>
 		<servlet-name>GroovletServlet</servlet-name>
 		<servlet-class>groovyx.gaelyk.GaelykServlet</servlet-class>
