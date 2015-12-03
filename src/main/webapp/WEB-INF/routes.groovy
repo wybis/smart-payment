@@ -18,4 +18,4 @@ get	    '/paymentRequest',                              forward : '/paymentReque
 post    '/paymentProcess',                              forward : '/paymentProcess.groovy'
 post    '/paymentCallBack',                             forward : '/paymentCallBack.groovy'
 
-get  	'/sessions/properties',	                        forward : '/io/vteial/smartpayment/web/session/properties.groovy'
+get  	'/sessions/properties',	                        forward : '/io/wybis/smartpayment/web/session/properties.groovy'
