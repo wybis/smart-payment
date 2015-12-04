@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" ng-controller="rootController">
+<html lang="en">
 <head>
     <title>Smart Payment</title>
 
@@ -9,107 +9,63 @@
 
     <link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
     <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
-    <link rel="stylesheet" href="bower_components/ng-notify/dist/ng-notify.min.css">
-    <link rel="stylesheet" href="bower_components/selectize/dist/css/selectize.default.css">
-    <!--
-    <link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.min.css"/>
-    <link rel="stylesheet" href="bower_components/angular.panels/dist/angular.panels.min.css">
-    -->
 
-    <link rel="stylesheet" href="modules/default.css">
+    <link rel="stylesheet" href="s-a/default.css">
 </head>
 
 <body>
+
+<br/><br/><br/><br/>
 
 <div class="container">
     <div class="text-center">
         <h1>Smart Payment</h1>
     </div>
 </div>
-<hr class="hr-xtra-small"/>
-<div id="pageHeader" class="container">
-    <div class="row">
-        <div class="six columns">
-            <strong>{{viewName | capitalizeFilter}}</strong>
-        </div>
-        <div class="six columns text-right">
-            <strong>
-                <a href="#/home">Home</a>
-                &nbsp;&nbsp;
-                <a href="#/testPayment">Test Payment</a>
-                &nbsp;&nbsp;
-                <a href="#/testBed">Test Bed</a>
-                &nbsp;&nbsp;
-            </strong>
-        </div>
-    </div>
-</div>
-<hr class="hr-xtra-small"/>
 
-<div id="page-body">
+<hr class="hr-xtra-small"/><br/>
 
-    <div class="container">
-        <br/>
-        <x-ng-view></x-ng-view>
-    </div>
-
-</div>
-
-<hr class="hr-xtra-small"/>
 <div class="container">
-    <div class="text-center">
-        <p>SmartPayment made with <a href="http://www.getskeleton.com" target="_blank">Skeleton CSS</a> and <a
-                href="http://www.angularjs.org" target="_blank">AngularJS</a></p>
+    <div clas="row">
+        <div class="four columns offset-by-two">
+            <div class="text-center">
+                <a class="button" href="index-s-a.html">Classic for Laptop</a>
+                <a class="button" href="index-s-a-m.html">Modern For Tablet</a>
+                <a class="button" href="index-s-a-s.html">Modern For Phone</a>
+            </div>
+            <p class="text-center">
+                Made with <a href="http://getskeleton.com/" target="_blank">Skeleton</a> and <a href="http://angularjs.org/" target="_blank">AngularJS</a>
+            </p>
+        </div>
+        <div class="four columns">
+            <div class="text-center">
+                <a class="button" href="index-p-r.html">Modern for Laptop</a>
+                <a class="button" href="index-p-r-m.html">Modern For Tablet</a>
+                <a class="button" href="index-p-r-s.html">Modern For Phone</a>
+            </div>
+            <p class="text-center">
+                Made with <a href="http://phonon.quarkdev.com/" target="_blank">Phonon</a> and <a href="http://riotjs.com/" target="_blank">RiotJS</a>
+            </p>
+        </div>
     </div>
 </div>
 
-<script src="bower_components/lodash/lodash.min.js"></script>
-<script src="bower_components/moment/min/moment.min.js"></script>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<hr class="hr-xtra-small"/>
 
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-route/angular-route.min.js"></script>
-<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script type="application/javascript">
 
-<script src="bower_components/ngstorage/ngStorage.min.js"></script>
-<script src="bower_components/ng-notify/dist/ng-notify.min.js"></script>
-<script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
-<script src="bower_components/angular-h-sweetalert/dist/ngSweetAlert.min.js"></script>
-<script src="bower_components/selectize/dist/js/standalone/selectize.min.js"></script>
-<script src="bower_components/angular-selectize2/dist/angular-selectize.js"></script>
-<!--
-<script src="bower_components/angular-block-ui/dist/angular-block-ui.min.js"></script>
-<script src="bower_components/angular-presence/angular-presence.min.js"></script>
-<script src="bower_components/angular.panels/dist/angular.panels.min.js"></script>
--->
-<script src="bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js"></script>
-<script src="bower_components/angular-inputmask/src/green.inputmask4angular.js"></script>
+    function processRedirect() {
+        console.log('processing redirect started...');
+        window.location = 'index-s-a.html';
+        console.log('processing redirect finished...');
+    }
 
-<script src="modules/init.js"></script>
-<script src="modules/common.js"></script>
-<script src="modules/wydNotify/wydNotifyByNgNotify.js"></script>
-<script src="modules/controllers.js"></script>
-
-<script src="modules/home/indexController.js"></script>
-<script src="modules/testPayment/testPaymentController.js"></script>
-<script src="modules/testBed/testBedController.js"></script>
-
-<script src="modules/index.js"></script>
-
-<!--
-<script type="text/ng-template" id="home.html">
-
-    <h1>{{viewName}} comming soon...</h1>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('processing redirect is going to start...');
+        window.setTimeout(processRedirect, 6000);
+    });
 
 </script>
 
-<script type="text/ng-template" id="notFound.html">
-
-    <h1>Oops! Resource doesn't exists...</h1>
-
-</script>
--->
 </body>
 </html>

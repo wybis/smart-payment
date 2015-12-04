@@ -2,7 +2,7 @@ import io.wybis.smartpayment.util.Helper
 
 //Helper.printRequestDetails(request)
 
-String path = '/index.html#/message?'
+String path = '/index-s-a.html#/message?'
 
 if(params.appTranId == null || params.pytTranId == null ) {
     path += 'errorMessage=Oops, something went wrong... Your payment is failed.'

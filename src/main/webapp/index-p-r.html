@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Payment</title>
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+
+    <link rel="stylesheet" href="bower_components/phonon/css/phonon.min.css"/>
+</head>
+<body>
+
+<div class="side-panel side-panel-left" data-expose-aside="left" data-disable="right" data-page="home" id="side-panel">
+    <header class="header-bar">
+        <!--
+        <button class="btn pull-right icon icon-close show-for-phone-only" data-side-panel-close="true"></button>
+        -->
+        <div class="pull-left">
+            <h1 class="title">Smart Payment</h1>
+        </div>
+    </header>
+    <div class="content">
+        <ul class="list">
+            <li><a class="padded-list" href="#!home">Home</a></li>
+            <li><a class="padded-list" href="#!test-payment">Test Payment</a></li>
+            <li><a class="padded-list" href="#!test-bed">Test Bed</a></li>
+        </ul>
+    </div>
+</div>
+
+<home data-page="true"></home>
+<message data-page="true"></message>
+<test-payment data-page="true"></test-payment>
+<test-bed data-page="true"></test-bed>
+
+<script src="p-r/modules/home.html" type="riot/tag"></script>
+<script src="p-r/modules/message.html" type="riot/tag"></script>
+<script src="p-r/modules/test-payment.html" type="riot/tag"></script>
+<script src="p-r/modules/test-bed.html" type="riot/tag"></script>
+
+<script src="bower_components/riot/riot+compiler.min.js"></script>
+<script src="bower_components/phonon/js/phonon.js"></script>
+
+<script src="p-r/index-p-r.js"></script>
+
+</body>
+</html>
+        

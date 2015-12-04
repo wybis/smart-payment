@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
     <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
 
-    <link rel="stylesheet" href="modules/default.css">
+    <link rel="stylesheet" href="s-a/default.css">
 </head>
 
 <body>

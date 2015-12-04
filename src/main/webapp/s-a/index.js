@@ -47,27 +47,27 @@ function appConfig($routeProvider, $locationProvider) {
     });
 
     $routeProvider.when('/home', {
-        templateUrl: 'modules/home/d-index.html',
+        templateUrl: 's-a/home/d-index.html',
         controller: 'indexController as vm'
     });
 
     $routeProvider.when('/testPayment', {
-        templateUrl: 'modules/testPayment/d-default.html',
+        templateUrl: 's-a/testPayment/d-default.html',
         controller: 'testPaymentController as vm'
     });
 
     $routeProvider.when('/testBed', {
-        templateUrl: 'modules/testBed/d-default.html',
+        templateUrl: 's-a/testBed/d-default.html',
         controller: 'testBedController as vm'
     });
 
     $routeProvider.when('/message', {
-        templateUrl: 'modules/zgeneral/d-message.html',
+        templateUrl: 's-a/zgeneral/d-message.html',
         controller: 'messageController as vm'
     });
 
     $routeProvider.when('/not-found', {
-        templateUrl: 'modules/zgeneral/d-notFound.html'
+        templateUrl: 's-a/modules/d-notFound.html'
     });
 
     $routeProvider.otherwise({
