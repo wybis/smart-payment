@@ -1,6 +1,6 @@
 def buildInfo = application.getAttribute('buildInfo')
 
-if(!buildInfo) {
+if (!buildInfo) {
     buildInfo = [:]
 
     Properties props = new Properties()

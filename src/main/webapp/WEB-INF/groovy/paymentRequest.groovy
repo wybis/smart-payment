@@ -1,8 +1,6 @@
-import io.wybis.smartpayment.util.Helper
-
 //Helper.printRequestDetails(request)
 
-if(params.merchantId == null || params.merchantName == null || params.tranAmount == null || params.appTranId == null || params.callBackUrl == null ) {
+if (params.merchantId == null || params.merchantName == null || params.tranAmount == null || params.appTranId == null || params.callBackUrl == null) {
     String message = 'Missing parameters... Invalid payment request!'
     println message
     return

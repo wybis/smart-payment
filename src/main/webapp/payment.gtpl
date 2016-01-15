@@ -7,25 +7,26 @@
 
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="modules_bower/skeleton/css/normalize.css">
+    <link rel="stylesheet" href="modules_bower/skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="modules_manual/wyd_skeleton/skeleton-extended.css">
 
-    <link rel="stylesheet" href="s-a/default.css">
+    <link rel="stylesheet" href="app/default.css">
 </head>
 
 <body>
 
-<div class="container">
-    <br>
-
-    <div class="text-center">
-        <h1>Smart Payment</h1>
+<header>
+    <div class="container">
+        <div class="text-center">
+            <h3>Smart Payment</h3>
+        </div>
     </div>
-</div>
+</header>
 
 <hr class="hr-xtra-small"/>
 
-<div id="page-body">
+<main>
 
     <br/><br/>
 
@@ -53,12 +54,13 @@
                     </div>
 
                     <div class="text-center">
-                        <input class="button-primary" type="submit" name="makePayment" value="Make Payment">
+                        <input type="submit" name="paymentType" value="Cancel Payment"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="submit" name="paymentType" value="Make Payment" class="button-primary"/>
                     </div>
                 </div>
             </div>
         </div>
-
         <input type="hidden" name="merchantId" value="<%=request.merchantId%>">
         <input type="hidden" name="appTranId" value="<%=request.appTranId%>">
         <input type="hidden" name="callBackUrl" value="<%=request.callBackUrl%>">
@@ -67,18 +69,17 @@
 
     <% } else { %>
 
-    <br/><br/>
-
     <div class="container">
-        <div clas="row">
+        <div class="row">
             <div class="eight columns offset-by-two">
+                <% if(request.pytTranId) { %>
                 <div class="text-center">
-                    <h4>Transaction Id : <% println(request.pytTranId) %></h4>
+                    <h3 class="text-success">Transaction Id : <% println(request.pytTranId) %></h4>
                 </div>
                 <br/>
-
+                <% } %>
                 <div class="text-center">
-                    <h5><% println(request.messageSuccess) %></h5>
+                    <h5 class="text-success"><% println(request.messageSuccess) %></h5>
                 </div>
             </div>
         </div>
@@ -86,13 +87,16 @@
 
     <% } %>
 
-</div>
+</main>
 
-<hr class="hr-xtra-small"/>
-
-<div class="container text-center">
-    <p>Payment Gateway Simulator made with <a href="http://www.getskeleton.com" target="_blank">Skeleton CSS</a></p>
-</div>
+<footer class="bg--off-white">
+    <hr class="hr-xtra-small"/>
+    <div class="container">
+        <div class="text-center">
+            <p>Smart Payment - Payment Gateway Simulator. &nbsp;&nbsp;&nbsp;&nbsp; &copy; Wybis India Pvt. Ltd.</p>
+        </div>
+    </div>
+</footer>
 
 <% if (request.messageSuccess != null) { %>
 
@@ -108,15 +112,25 @@
 
         var hiddenField = document.createElement('input');
         hiddenField.setAttribute('type', 'hidden');
-        hiddenField.setAttribute('name', 'appTranId');
-        hiddenField.setAttribute('value', '<%print(request.appTranId)%>');
+        hiddenField.setAttribute('name', 'pytStatus');
+        hiddenField.setAttribute('value', '<%print(request.pytStatus)%>');
         form.appendChild(hiddenField);
+
+        <% if(request.pytStatus == 'success') { %>
 
         hiddenField = document.createElement('input');
         hiddenField.setAttribute('type', 'hidden');
         hiddenField.setAttribute('name', 'pytTranId');
         hiddenField.setAttribute('value', '<%print(request.pytTranId)%>');
         form.appendChild(hiddenField);
+
+        hiddenField = document.createElement('input');
+        hiddenField.setAttribute('type', 'hidden');
+        hiddenField.setAttribute('name', 'appTranId');
+        hiddenField.setAttribute('value', '<%print(request.appTranId)%>');
+        form.appendChild(hiddenField);
+
+        <% } %>
 
         document.body.appendChild(form);
 

@@ -1,2 +1,1 @@
-
 redirect 'index.html'

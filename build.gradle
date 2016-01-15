@@ -80,7 +80,7 @@ appengine {
         }
 
         app {
-            id = 'wybis-wys'
+            id = 'smartpayment'
         }
     }
 }
@@ -88,7 +88,7 @@ appengine {
 dependencies {
     def jacksonVersion = '2.4.3'
     def groovyVersion = '2.3.11'
-    def gaeVersion = '1.9.26'
+    def gaeVersion = '1.9.30'
 
     compile("eu.bitwalker:UserAgentUtils:1.14")
     compile("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
@@ -111,7 +111,7 @@ dependencies {
     appengineSdk("com.google.appengine:appengine-java-sdk:$gaeVersion")
 }
 
-task bowerComponents(type: Sync) {
+task syncBower(type: Sync) {
     from 'bower_components'
 
     include '**/*.min.css'
@@ -124,7 +124,7 @@ task bowerComponents(type: Sync) {
     include 'angular-inputmask/src/green.inputmask4angular.js'
     include 'angular-selectize2/dist/angular-selectize.js'
 
-    into 'src/main/webapp/bower_components'
+    into 'src/main/webapp/modules_bower'
 
     includeEmptyDirs = false
 }
