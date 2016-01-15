@@ -117,17 +117,39 @@ task syncBower(type: Sync) {
     include '**/*.min.css'
     include '**/*.min.js'
     include '**/*.map'
+    include '**/*.eot'
+    include '**/*.svg'
+    include '**/*.ttf'
+    include '**/*.woff'
+    include '**/*.woff2'
+    include 'pikaday/pikaday.js'
+    include 'sweetalert/dist/sweetalert.css'
+    include 'page/page.js'
     include 'skeleton/css/normalize.css'
     include 'skeleton/css/skeleton.css'
-    include 'sweetalert/dist/sweetalert.css'
+    include 'pikaday/css/pikaday.css'
     include 'selectize/dist/css/selectize.default.css'
+
+    include 'jquery.inputmask/dist/jquery.inputmask.bundle.js'
     include 'angular-inputmask/src/green.inputmask4angular.js'
-    include 'angular-selectize2/dist/angular-selectize.js'
 
     into 'src/main/webapp/modules_bower'
 
     includeEmptyDirs = false
 }
+
+task syncNode(type: Sync) {
+    from 'node_modules'
+
+    include '**/*.min.css'
+    include '**/*.min.js'
+    include 'riot-routehandler/lib/routehandler.js'
+
+    into 'src/main/webapp/modules_node'
+
+    includeEmptyDirs = false
+}
+
 
 task cleanlocallogs << {
     File logDir = new File('logs')

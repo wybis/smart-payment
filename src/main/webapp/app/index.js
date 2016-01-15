@@ -17,7 +17,7 @@ dependents.push('ngStorage');
 dependents.push('green.inputmask4angular');
 dependents.push('ngNotify');
 dependents.push('hSweetAlert');
-dependents.push('selectize');
+//dependents.push('selectize');
 dependents.push('blockUI');
 dependents.push('app.filters');
 dependents.push('app.directives');
