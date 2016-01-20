@@ -116,18 +116,18 @@
         hiddenField.setAttribute('value', '<%print(request.pytStatus)%>');
         form.appendChild(hiddenField);
 
+        hiddenField = document.createElement('input');
+        hiddenField.setAttribute('type', 'hidden');
+        hiddenField.setAttribute('name', 'appTranId');
+        hiddenField.setAttribute('value', '<%print(request.appTranId)%>');
+        form.appendChild(hiddenField);
+
         <% if(request.pytStatus == 'success') { %>
 
         hiddenField = document.createElement('input');
         hiddenField.setAttribute('type', 'hidden');
         hiddenField.setAttribute('name', 'pytTranId');
         hiddenField.setAttribute('value', '<%print(request.pytTranId)%>');
-        form.appendChild(hiddenField);
-
-        hiddenField = document.createElement('input');
-        hiddenField.setAttribute('type', 'hidden');
-        hiddenField.setAttribute('name', 'appTranId');
-        hiddenField.setAttribute('value', '<%print(request.appTranId)%>');
         form.appendChild(hiddenField);
 
         <% } %>

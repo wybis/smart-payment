@@ -6,7 +6,7 @@ String path = '/index-s-a.html#/message?'
 
 if (params.pytStatus == 'canceled') {
     path += "pytStatus=${params.pytStatus}"
-    path += "&warningMessage=Payment canceled! Please wait while redirecting to merchant site."
+    path += "&warningMessage=Your recently raised payment has been canceled."
     //systemout.println path
     redirect path
     return
