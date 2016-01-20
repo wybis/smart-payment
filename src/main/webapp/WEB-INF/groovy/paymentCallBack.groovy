@@ -1,6 +1,6 @@
 import io.wybis.smartpayment.util.Helper
 
-Helper.dumpRequest(request)
+//Helper.dumpRequest(request)
 
 String path = '/index-s-a.html#/message?'
 

@@ -1,7 +1,7 @@
 import io.wybis.smartpayment.dto.SessionDto
 import io.wybis.smartpayment.util.Helper
 
-Helper.dumpRequest(request)
+//Helper.dumpRequest(request)
 
 request.merchantId = params.merchantId
 request.merchantName = params.merchantName
